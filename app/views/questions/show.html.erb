@@ -1,16 +1,7 @@
-<h1>Mission Rise</h1>
-
-<h2>Question</h2>
-
-<div>
-  <%= @question.prompt %>
-</div>
-
-
-<div>
+<div class="jumbotron text-xs-center">
+  <h2 class="text-muted"><em>Question</em></h2>
+  <h2><%= @question.prompt %></h2>
   <%= form_tag decision_path(id:@question.id), method: :put do %>
       <%= render @partial, meta: @question.meta %>
   <% end %>
 </div>
-
-
