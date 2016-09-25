@@ -8,13 +8,15 @@
 
 Question.where(
   prompt: "Are you pregnant?",
-  kind: 'MultipleChoiceQuestion',
+  kind: 'MultipleChoiceQuestion'
+).first_or_create(
   meta: ['Yes', 'No']
-).first_or_create
+)
 
 Question.where(
   prompt: "How many children do you have?",
-  kind: 'NumericQuestion',
+  kind: 'NumericQuestion'
+).first_or_create(
   meta: [0, 20]
-).first_or_create
+)
 
