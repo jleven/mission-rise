@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by_name params[:id]
+    headers['Last-Modified'] = Time.now.httpdate
     @partial = PARTIALS[@question.kind]
     @percent_done = COMPLETION[@question.name]
     @programs = PROGRAMS[@question.name]

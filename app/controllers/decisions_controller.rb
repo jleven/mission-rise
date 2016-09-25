@@ -7,7 +7,7 @@ class DecisionsController < ApplicationController
   def index
     # if user is in the middle of answering, continue
     # else
-    redirect_to question_path("zipcode")
+    redirect_to question_path("q1")
   end
 
   def update
