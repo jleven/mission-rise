@@ -136,7 +136,11 @@ module Eligible
     end
 
     def family_size
-      value_for('q6').to_i
+      value_for('q6').to_i + one_for_pregnant
+    end
+
+    def one_for_pregnant
+      value_for('q15') == "Yes" ? 1 : 0
     end
 
     def others_citizens

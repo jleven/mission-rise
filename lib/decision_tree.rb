@@ -73,7 +73,7 @@ module DecisionTree
     end
 
     def q13(answer)
-      [:ok, 'q14']
+      [:ok, 'q15']
     end
 
     def q14(answer)
