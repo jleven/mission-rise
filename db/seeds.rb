@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Question.where(
+  prompt: "Are you pregnant?",
+  kind: 'MultipleChoiceQuestion',
+  meta: ['Yes', 'No']
+).first_or_create
+
+Question.where(
+  prompt: "How many children do you have?",
+  kind: 'NumericQuestion',
+  meta: [0, 20]
+).first_or_create
+
