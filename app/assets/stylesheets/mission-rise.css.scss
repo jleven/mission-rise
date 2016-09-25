@@ -217,3 +217,24 @@ body {
     position: absolute;
     background-color: #2D6C8B;
 }
+
+.numeric {
+  display: flex;
+
+  input {
+    margin: 0 auto;
+    text-align: center;
+    height: 45px;
+    width: 200px;
+    line-height: 30px;
+    font-size: 20px;
+    border: 2px solid #6b9080;
+  }
+}
+
+.next {
+  position: fixed;
+  right: 0;
+  bottom: 10%;
+  width: 20%;
+}
