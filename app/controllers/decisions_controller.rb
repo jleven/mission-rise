@@ -22,9 +22,15 @@ class DecisionsController < ApplicationController
     answer.response = response
     answer.save
 
-    question_name = DecisionTree.next_question(answer)
+    status, question_name = DecisionTree.next_question(answer)
 
-    redirect_to question_path(question_name)
+    case status
+    when :ok
+      redirect_to question_path(question_name)
+    when :done
+      redirect_to report_path
+    end
+
   end
 
   private

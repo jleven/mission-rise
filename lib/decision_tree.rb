@@ -6,10 +6,10 @@ module DecisionTree
   end
 
   def self.zipcode(answer)
-    'pregnant'
+    [:ok, 'pregnant']
   end
 
   def self.pregnant(answer)
-    'zipcode'
+    [:done]
   end
 end

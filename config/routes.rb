@@ -9,6 +9,8 @@ Rise::Application.routes.draw do
 
   resources :questions, only: :show
 
+  resource :report, only: :show
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
