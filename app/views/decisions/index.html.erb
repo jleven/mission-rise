@@ -3,10 +3,14 @@
 <h2>Question</h2>
 
 <div>
-  <%= @question %>
+  <%= @question.prompt %>
 </div>
 
 
-<%= @options %>
+<div>
+  <%= form_tag decision_path(id:@question.id), method: :put do %>
+      <%= render @partial, meta: @question.meta %>
+  <% end %>
+</div>
 
-<%= link_to "Next", decisions_path, method: :post %>
+
