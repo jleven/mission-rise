@@ -7,6 +7,8 @@ Rise::Application.routes.draw do
 
   resources :decisions, only: [:index, :update]
 
+  resources :questions, only: :show
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

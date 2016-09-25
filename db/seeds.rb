@@ -7,16 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Question.where(
-  prompt: "Are you pregnant?",
-  kind: 'MultipleChoiceQuestion'
-).first_or_create(
-  meta: ['Yes', 'No']
+  name: "zipcode"
+).upsert(
+  prompt: "Where are you?",
+  kind: 'NumericQuestion',
+  meta: [0, 99999]
 )
 
 Question.where(
-  prompt: "How many children do you have?",
-  kind: 'NumericQuestion'
-).first_or_create(
-  meta: [0, 20]
+  name: 'pregnant'
+).upsert(
+  prompt: "Are you pregnant?",
+  kind: 'MultipleChoiceQuestion',
+  meta: ["Yes", "No"]
 )
 

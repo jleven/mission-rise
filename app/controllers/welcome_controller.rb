@@ -6,7 +6,6 @@ class WelcomeController < ApplicationController
   end
 
   def my_code
-    session[:user_id] = generate_user_id
   end
 
   private

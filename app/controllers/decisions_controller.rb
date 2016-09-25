@@ -5,8 +5,9 @@ class DecisionsController < ApplicationController
   }
 
   def index
-    @question = Question.all.sample
-    @partial = PARTIALS[@question.kind]
+    # if user is in the middle of answering, continue
+    # else
+    redirect_to question_path("zipcode")
   end
 
   def update
@@ -21,7 +22,9 @@ class DecisionsController < ApplicationController
     answer.response = response
     answer.save
 
-    redirect_to action: :index
+    question_name = DecisionTree.next_question(answer)
+
+    redirect_to question_path(question_name)
   end
 
   private
