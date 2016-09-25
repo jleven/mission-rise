@@ -4,9 +4,10 @@
     <span><%= @percent_done %>% Complete</span>
   </div>
 </div>
-  <h2 class="text-muted"><em>Question</em></h2>
-  <h2><%= @question.prompt %></h2>
-  <%= form_tag decision_path(id:@question.id), method: :put do %>
-  <%= render @partial, meta: @question.meta %>
-  <% end %>
+  <div class="prompt"><%= @question.prompt %></div>
+  <div class="options">
+    <%= form_tag decision_path(id:@question.id), method: :put do %>
+        <%= render @partial, meta: @question.meta %>
+    <% end %>
+  </div>
 </div>

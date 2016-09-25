@@ -50,7 +50,7 @@ module DecisionTree
 
     def q6(answer)
       if answer.response.to_i <= 1
-        [:ok, 'q9']
+        [:ok, 'q14']
       else
         [:ok, 'q7']
       end
