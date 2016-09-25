@@ -4,8 +4,20 @@ class QuestionsController < ApplicationController
     'NumericQuestion' => 'questions/numeric',
   }
 
+  COMPLETION = {
+    "zipcode" => 10,
+    "pregnant" => 95,
+  }
+
+  PROGRAMS = {
+    "zipcode" => 1,
+    "pregnant" => 2,
+  }
+
   def show
     @question = Question.find_by_name params[:id]
     @partial = PARTIALS[@question.kind]
+    @percent_done = COMPLETION[@question.name]
+    @programs = PROGRAMS[@question.name]
   end
 end

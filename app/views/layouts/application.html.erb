@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rise</title>
+  <title>Mission Rise</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -29,8 +28,9 @@
     </div>
   </div>
 </nav>
-<%= yield %>
-
+<div class="main">
+  <%= yield %>
+</div>
 <footer class="panel-footer">
   <p class="text-muted">&copy; Mission Rise <%= Date.today.year %></p>
 </footer>

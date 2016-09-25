@@ -4,15 +4,15 @@ This is the custom CSS file for Mission Rise (c) 2016
 
 /* Override Navbar Color */
 .navbar-default {
-  background-color: #c90202;
-  border-color: #f70a0a;
+  background-color: #83b69f;
+  border-color: #6b9080;
 }
 .navbar-default .navbar-brand {
   color: #ecf0f1;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #fdfdfd;
+  color: #ffffff;
 }
 .navbar-default .navbar-text {
   color: #ecf0f1;
@@ -22,26 +22,26 @@ This is the custom CSS file for Mission Rise (c) 2016
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #fdfdfd;
+  color: #ffffff;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #fdfdfd;
-  background-color: #f70a0a;
+  color: #ffffff;
+  background-color: #6b9080;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #fdfdfd;
-  background-color: #f70a0a;
+  color: #ffffff;
+  background-color: #6b9080;
 }
 .navbar-default .navbar-toggle {
-  border-color: #f70a0a;
+  border-color: #6b9080;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #f70a0a;
+  background-color: #6b9080;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #ecf0f1;
@@ -54,7 +54,7 @@ This is the custom CSS file for Mission Rise (c) 2016
   color: #ecf0f1;
 }
 .navbar-default .navbar-link:hover {
-  color: #fdfdfd;
+  color: #ffffff;
 }
 
 @media (max-width: 767px) {
@@ -63,12 +63,105 @@ This is the custom CSS file for Mission Rise (c) 2016
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #fdfdfd;
+    color: #ffffff;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #fdfdfd;
-    background-color: #f70a0a;
+    color: #ffffff;
+    background-color: #6b9080;
   }
 }
+
+/* Override Button Color */
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    border-radius:0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #83b69f;
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #6b9080;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: #6b9080;
+    box-shadow: none;
+}
+
+/* Responsive Full Background Image Using CSS
+*/
+.welcome {
+
+  min-height: 500px;
+  min-width: 500px;
+  width: Auto;
+  height: Auto;
+  padding: 13px;
+  /* Location of the image */
+  background-image: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('welcome-web.jpeg');
+
+  /* Image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+
+  /* Makes the image fixed in the viewport so that it doesn't move when
+     the content height is greater than the image height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+
+  /* Pick a solid background color that will be displayed while the background image is loading */
+  background-color:#464646;
+
+  /* SHORTHAND CSS NOTATION
+   * background: url(background-photo.jpg) center center cover no-repeat fixed;
+   */
+}
+
+.welcome h1{
+    color: #fff;
+    word-wrap:break-word;
+}
+
+.btn-welcome{
+  position: absolute;
+  bottom:   0;
+}
+
+.main {
+  overflow:auto;
+  padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-top:20px;
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+  .welcome {
+    /* The file size of this background image is 93% smaller
+     * to improve page load speed on mobile internet connections */
+    background-image: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('welcome-mobile.jpeg');
+  }
+	}
