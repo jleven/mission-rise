@@ -39,6 +39,8 @@ end
 gem 'pg'
 gem 'rails_12factor'
 
+gem 'rails-bootstrap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
