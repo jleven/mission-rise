@@ -117,7 +117,7 @@ This is the custom CSS file for Mission Rise (c) 2016
 
 .hero {
     /* Location of the image */
-    background-image: url('hero.png');
+    background-image: asset-data-url('hero.png');
 
     /* Image is centered vertically and horizontally at all times */
     background-position: center center;
