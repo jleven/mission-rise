@@ -52,9 +52,9 @@ module Eligible
 
     def eligible?
       begin
-        family_size? && (income? || resource?)
+        family_size? && citizenship? && (income? || resource?)
       rescue ArgumentError => e
-        puts "ERROR"
+        puts "========== ERROR =========="
         p e
         false
       end
@@ -105,16 +105,26 @@ module Eligible
       (nineteen && total_cash < 2250) || (sixty && total_cash < 3250)
     end
 
+    def citizenship?
+      # citizen
+      return false unless citizen || value_for('q3') == "Yes"
+
+      return true if family_size <= 1
+
+      # all members of family are citizens
+      others_citizens || value_for('q13') == "Yes"
+    end
+
     def total_cash
       value_for('q5a').to_i
     end
 
-    def family_size
-      value_for('q6').to_i
-    end
-
     def income
       value_for('q5d').to_i
+    end
+
+    def citizen
+      value_for('q2') == "Yes"
     end
 
     def medicare
@@ -123,6 +133,14 @@ module Eligible
 
     def ssi
       value_for('q5', 0).to_i
+    end
+
+    def family_size
+      value_for('q6').to_i
+    end
+
+    def others_citizens
+      value_for('q12', "Yes") == "Yes"
     end
 
     def nineteen
